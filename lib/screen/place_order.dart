@@ -11,17 +11,17 @@ class PlaceOrder extends StatefulWidget {
 }
 
 class _PlaceOrderState extends State<PlaceOrder> {
-  bool _button1Clicked = false;
+  bool isBuy = false;
 
   void _onButton1Clicked() {
     setState(() {
-      _button1Clicked = true;
+      isBuy = true;
     });
   }
 
   void _onButton2Clicked() {
     setState(() {
-      _button1Clicked = false;
+      isBuy = false;
     });
   }
 
@@ -146,13 +146,9 @@ class _PlaceOrderState extends State<PlaceOrder> {
                   height: 45,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          _button1Clicked ? Colors.green : Colors.grey,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    onPressed: _button1Clicked ? null : _onButton1Clicked,
+                        backgroundColor: isBuy ? Colors.green : Colors.grey,
+                        shape: StadiumBorder()),
+                    onPressed: _onButton1Clicked,
                     child: const Text('BUY'),
                   ),
                 ),
@@ -161,14 +157,10 @@ class _PlaceOrderState extends State<PlaceOrder> {
                   height: 45,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          _button1Clicked ? Colors.green : Colors.grey,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    onPressed: _button1Clicked ? _onButton2Clicked : null,
-                    child: const Text('BUY'),
+                        backgroundColor: isBuy ? Colors.grey : Colors.green,
+                        shape: StadiumBorder()),
+                    onPressed: _onButton2Clicked,
+                    child: const Text('SELL'),
                   ),
                 )
               ],

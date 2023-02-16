@@ -20,22 +20,36 @@ class _HomeState extends State<Home> {
     });
   }
 
-  var items = [
+  var items = const [
     BottomNavigationBarItem(
-        icon: Image.asset('assets/icons/home.png',
-            color: const Color(0xff8DA4C9), width: 26),
+        icon: ImageIcon(
+          AssetImage('assets/icons/home.png'),
+          size: 26,
+        ),
         label: 'Home'),
     BottomNavigationBarItem(
-        icon: Image.asset('assets/icons/watch.png', width: 26),
-        label: 'Categories'),
+        icon: ImageIcon(
+          AssetImage('assets/icons/watch.png'),
+          size: 26,
+        ),
+        label: 'Wathlist'),
     BottomNavigationBarItem(
-        icon: Image.asset('assets/icons/comment.png', width: 26),
+        icon: ImageIcon(
+          AssetImage('assets/icons/comment.png'),
+          size: 26,
+        ),
         label: 'News'),
     BottomNavigationBarItem(
-        icon: Image.asset('assets/icons/group.png', width: 26),
+        icon: ImageIcon(
+          AssetImage('assets/icons/group.png'),
+          size: 26,
+        ),
         label: 'Account'),
     BottomNavigationBarItem(
-        icon: Image.asset('assets/icons/setting.png', width: 26),
+        icon: ImageIcon(
+          AssetImage('assets/icons/setting.png'),
+          size: 26,
+        ),
         label: 'Account'),
   ];
   @override
@@ -62,7 +76,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: items,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red,
+        selectedItemColor: Color(0xff00ACEC),
+        unselectedItemColor: Color(0xff8da4c9),
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         onTap: _onItemTapped,
